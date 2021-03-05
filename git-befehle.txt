@@ -1,0 +1,29 @@
+# Kurze Übersicht aller Befehle anzeigen
+git config -h
+
+# Ordner als Git Projekt installieren
+git init
+
+# Usernamen festlegen
+git config --global user.name "ebody"
+
+# E-Mail Adresse festlegen
+git config --global user.email "e-body@arcor.de"
+
+# Zeigt alle globalen Einstellungen
+git config --global -e
+
+# Status der Dateien sehen
+git status
+
+# Datei in Index hinzufügen
+git add name.txt
+
+# Alle .txt Dateien dem Index hinzufügen
+git add *.txt
+
+# Alle Dateien aus Verzeichnis dem Index hinzufügen
+git add .
+
+git remote add origin https://github.com/ThomasLeister/beispiel.git
+
