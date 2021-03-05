@@ -25,5 +25,11 @@ git add *.txt
 # Alle Dateien aus Verzeichnis dem Index hinzufügen
 git add .
 
+# Listet alle Dateien auf
+git ls-files
+
+# Datei löschen. Danach git add file.txt, damit die Datei aus der Stage gelöscht wird.
+rm file.txt
+
 git remote add origin https://github.com/ThomasLeister/beispiel.git
 
