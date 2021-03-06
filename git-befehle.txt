@@ -29,7 +29,22 @@ git add .
 git ls-files
 
 # Datei löschen. Danach git add file.txt, damit die Datei aus der Stage gelöscht wird.
-rm file.txt
+git rm file.txt
+
+# Datei umbennen
+git mv alt.txt neu.txt
+
+# Verzeichnis erstellen
+mkdir meinverzeichnis
+
+# Schreibt "hello" in die Datei dev.log und erstellt die Datei 
+echo hello > meinverzeichnis/dev.log
+
+# Verzeichnis ignorieren. git status würde nicht etwas wie "untracked..." melden, wenn man es nicht geadded hat
+echo meinverzeichnis/ > .gitignore
+
+# Öffnet die Datei .gitignore. Hier kann man Dateien, auch *.txt eintragen, die ignoriert werden sollen
+code .gitignore
 
 git remote add origin https://github.com/ThomasLeister/beispiel.git
 
