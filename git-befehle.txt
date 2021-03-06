@@ -50,7 +50,31 @@ echo meinverzeichnis/ > .gitignore
 code .gitignore
 
 # --chached entfernt nur aus dem Index. -r habe ich nicht verstanden
-git rm --chached -r bin/
+git rm --cached -r bin/
+
+# Alle Code Änderungen anzeigen
+git diff --staged
+
+# Listet alle commits auf. 
+## Mit Leertaste springt man zur nächsten Seite, wenn es sehr lange Einträge sind
+## Q = beenden
+git log
+
+# Listet alle commit Messages auf. Neueste zuerst. Ist etwas übersichtlicher. 
+git log --oneline
+
+# Listet alle commit Messages auf. Älteste zuerst. Ist etwas übersichtlicher. 
+git log --oneline --reverse
+
+# Zeigt Commit Details anhand der ID, wie Message, aber auch Code Änderungen
+git show <unique id>
+
+# Zeigt Commit Details zwei Schritte zuvor, wie Message, aber auch Code Änderungen
+git show HEAD~2
+
+# Zeigt Commit Details zwei Schritte zuvor, wie Message, aber auch Code Änderungen
+git show HEAD~2:git-befehle.txt
+
 
 git remote add origin https://github.com/ThomasLeister/beispiel.git
 
