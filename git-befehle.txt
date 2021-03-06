@@ -25,8 +25,11 @@ git add *.txt
 # Alle Dateien aus Verzeichnis dem Index hinzufügen
 git add .
 
-# Listet alle Dateien auf
+# Listet alle Dateien in der Staging Area, Index (Warteschleife, Ort für Dateien, die geprüft werden sollen) auf
 git ls-files
+
+# Hilfe für einen Befehl aufrufen
+git <befehl> wie rm -h
 
 # Datei löschen. Danach git add file.txt, damit die Datei aus der Stage gelöscht wird.
 git rm file.txt
@@ -45,6 +48,9 @@ echo meinverzeichnis/ > .gitignore
 
 # Öffnet die Datei .gitignore. Hier kann man Dateien, auch *.txt eintragen, die ignoriert werden sollen
 code .gitignore
+
+# --chached entfernt nur aus dem Index. -r habe ich nicht verstanden
+git rm --chached -r bin/
 
 git remote add origin https://github.com/ThomasLeister/beispiel.git
 
