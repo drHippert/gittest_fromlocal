@@ -1,6 +1,8 @@
 # Kurze Übersicht aller Befehle anzeigen
 git config -h
 
+git commit -m "Beschreibung der Änderungen, die jeder später verstehen kann"
+
 # Ordner als Git Projekt installieren
 git init
 
@@ -72,7 +74,7 @@ git show <unique id>
 # Zeigt Commit Details zwei Schritte zuvor, wie Message, aber auch Code Änderungen
 git show HEAD~2
 
-# Zeigt Commit Details zwei Schritte zuvor, wie Message, aber auch Code Änderungen
+# Zeigt den Inhalt der Datei die vor 2 Schritten commited wurde. HEAD~0 würde die aktuelle/letzte Version zeigen.
 git show HEAD~2:git-befehle.txt
 
 
