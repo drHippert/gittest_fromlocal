@@ -1,6 +1,9 @@
 # Kurze Übersicht aller Befehle anzeigen
 git config -h
 
+# Commando Fenster leeren
+clear
+
 git commit -m "Beschreibung der Änderungen, die jeder später verstehen kann"
 
 # Ordner als Git Projekt installieren
@@ -27,6 +30,9 @@ git add *.txt
 # Alle Dateien aus Verzeichnis dem Index hinzufügen
 git add .
 
+# Listet Datein im Working Directory auf
+ls
+
 # Listet alle Dateien in der Staging Area, Index (Warteschleife, Ort für Dateien, die geprüft werden sollen) auf
 git ls-files
 
@@ -34,6 +40,9 @@ git ls-files
 git <befehl> wie rm -h
 
 # Datei löschen. Danach git add file.txt, damit die Datei aus der Stage gelöscht wird.
+rm file.txt
+
+# Datei löschen aus Workspace und Index löschen
 git rm file.txt
 
 # Datei umbennen
