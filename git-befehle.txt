@@ -4,6 +4,7 @@ git config -h
 # Commando Fenster leeren
 clear
 
+# Index an Repository übergeben
 git commit -m "Beschreibung der Änderungen, die jeder später verstehen kann"
 
 # Ordner als Git Projekt installieren
@@ -30,7 +31,7 @@ git add *.txt
 # Alle Dateien aus Verzeichnis dem Index hinzufügen
 git add .
 
-# Listet Datein im Working Directory auf
+# Listet Dateien im Working Directory auf
 ls
 
 # Listet alle Dateien in der Staging Area, Index (Warteschleife, Ort für Dateien, die geprüft werden sollen) auf
@@ -77,6 +78,9 @@ git log --oneline
 # Listet alle commit Messages auf. Älteste zuerst. Ist etwas übersichtlicher. 
 git log --oneline --reverse
 
+# Listet alle geänderten Dateien mit Detials zu den Änderungen auf
+git log --stat
+
 # Zeigt Commit Details anhand der ID, wie Message, aber auch Code Änderungen
 git show <unique id>
 
@@ -86,6 +90,44 @@ git show HEAD~2
 # Zeigt den Inhalt der Datei die vor 2 Schritten commited wurde. HEAD~0 würde die aktuelle/letzte Version zeigen.
 git show HEAD~2:git-befehle.txt
 
+# VS Code als diff Tool verwenden
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
 git remote add origin https://github.com/ThomasLeister/beispiel.git
 
+
+
+# Listet alle Commits als Zeile auf und mit Branches
+git log --oneline --all --graph
+
+
+# Browsing Commit History 
+## --oneline nach log listet alles in einer Zeile auf
+
+##Viewing the history
+git log --stat                      # Zeigt geänderte Dateien mit Details
+git log --patch                     # Shows the actual changes (patches)
+
+## Filtering the history
+git log -3                          # Zeigt die letzte 3 Commits
+git log --author=“Mosh”             # Zeigt alle Commits vom Autor "Mosh"
+git log --before=“2020-08-17”       # Zeigt alle Commits vor 17.08.2020
+git log --after=“one week ago”      # Zeigt alle Commits vor einer Woche
+git log --grep=“GUI”                # Zeigt alle Commits mit "GUI" in der Beschreibung 
+git log -S“GUI”                     # Zeigt alle Commits mit "GUI" im Code?
+git log hash1..hash2                # Zeigt alle Commits der IDx bis IDy
+git log file.txt                    # Zeigt alle Commits die die Datei file.txt betreffen
+
+# Creating an alias - damit kann man eigene Befehle erstellen, die in der Konfigurationsdatei gespeichert werden
+## Hier legt man den Befehel lg fest. Gibt man lg ein, wird git log --oneline ausgeführt 
+git config --global alias.lg “log --oneline"
+
+# bisect habe ich nicht verstanden. Es soll helfen Bugs zu finden.
+
+
+# Tagging - nützlich, um z.B. eine neue version zu markieren
+git tag v1.0                        # Tags the last commit as v1.0
+git tag v1.0 5e7a828                # Tags an earlier commit
+git tag                             # Lists all the tags
+git tag -d v1.0                     # Deletes the given tag
