@@ -1,4 +1,49 @@
-# Kurze Übersicht aller Befehle anzeigen
+# ************* Git initialisieren und konfigurieren ***************
+
+    # Aktuellen Ordner (siehe Terminal Pfad) als Git Projekt installieren
+    git init
+
+    # Kurze Übersicht aller Befehle anzeigen
+    git config –h
+
+    # Zeigt alle globalen Einstellungen
+    git config --global -e
+
+    # Usernamen festlegen
+    git config --global user.name "ebody"
+
+    # E-Mail Adresse festlegen
+    git config --global user.email e-body@arcor.de
+
+    #.gitignore Datei erstellen
+    echo "" > .gitignore
+
+    # Man kann aber auch direkt eine Datei oder Verzeichnis bei der Erstellung eintragen. In diesem Beispiel das Verzeichnis logs.
+    echo logs > .gitignore
+
+    # Ruft die Datei auf, dann kann ich Dateien und Verzeichnisse eintragen, die ignoriert werden sollen
+    code .gitignore
+
+# ************* Auflisten ***************
+    # Listet Dateien im Working Directory auf
+    ls
+
+    # Listet alle Dateien in der Staging Area, Index (Warteschleife, Ort für Dateien, die geprüft werden sollen) auf
+    git ls-files
+
+    # Status der Dateien sehen
+    git status
+
+    # Listet alle Commits als Zeile auf und mit Branches
+    git log --oneline --all --graph
+
+    # Unterschiede von 2 Branches zeigen
+    git diff master..bugfix/signup-form
+
+
+# *************  ***************
+
+# Kurze Übersicht aller Befehle anzeigen. In dem Beispiel vom Befehl config
 git config -h
 
 # Commando Fenster leeren
@@ -7,17 +52,8 @@ clear
 # Index an Repository übergeben
 git commit -m "Beschreibung der Änderungen, die jeder später verstehen kann"
 
-# Ordner als Git Projekt installieren
-git init
 
-# Usernamen festlegen
-git config --global user.name "ebody"
 
-# E-Mail Adresse festlegen
-git config --global user.email "e-body@arcor.de"
-
-# Zeigt alle globalen Einstellungen
-git config --global -e
 
 # Status der Dateien sehen
 git status
@@ -31,14 +67,9 @@ git add *.txt
 # Alle Dateien aus Verzeichnis dem Index hinzufügen
 git add .
 
-# Listet Dateien im Working Directory auf
-ls
 
-# Listet alle Dateien in der Staging Area, Index (Warteschleife, Ort für Dateien, die geprüft werden sollen) auf
-git ls-files
 
-# Hilfe für einen Befehl aufrufen
-git <befehl> wie rm -h
+
 
 # Datei löschen. Danach git add file.txt, damit die Datei aus der Stage gelöscht wird.
 rm file.txt
@@ -132,7 +163,9 @@ git tag v1.0 5e7a828                # Tags an earlier commit
 git tag                             # Lists all the tags
 git tag -d v1.0                     # Deletes the given tag
 
-
+# Unterschiede von 2 Branches zeigen
 git diff master..bugfix/signup-form
 
 git log --oneline --all --graph
+
+git merge origin/master
